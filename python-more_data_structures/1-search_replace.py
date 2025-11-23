@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 def search_replace(my_list, search, replace):
-    l = []
+    list_ = []
     for i in my_list:
         if i == search:
-            l += [replace]
-        elif i == replace:
-            l += [search]
+            list_ += [replace]
+        elif i =  replace:
+            list_ += [search]
         else:
-            l += [i]
-    return l
+            list_ += [i]
+    return list_
