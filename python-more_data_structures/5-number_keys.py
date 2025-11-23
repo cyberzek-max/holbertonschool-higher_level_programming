@@ -1,3 +1,6 @@
 #!/usr/bin/python3
 def number_keys(a_dictionary):
-    return a_dictionary['number']
+    summa = 0
+    for i in a_dictionary:
+        summa += 1
+    return summa
