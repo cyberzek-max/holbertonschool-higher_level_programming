@@ -6,5 +6,5 @@ def uniq_add(my_list=[]):
             list_ += [i]
     summa = 0
     for i in list_:
-        summa += i:
+        summa += i
     return summa
