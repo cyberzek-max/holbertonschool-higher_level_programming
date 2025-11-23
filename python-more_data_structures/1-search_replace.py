@@ -4,7 +4,7 @@ def search_replace(my_list, search, replace):
     for i in my_list:
         if i == search:
             list_ += [replace]
-        elif i =  replace:
+        elif i == replace:
             list_ += [search]
         else:
             list_ += [i]
