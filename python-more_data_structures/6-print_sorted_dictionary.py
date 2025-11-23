@@ -2,4 +2,4 @@
 def print_sorted_dictionary(a_dictionary):
     sorted_dict = dict(sorted(a_dictionary.items()))
     for i in sorted_dict.items():
-        print(srt(i) + ": " + srt(sorted_dict[i]))
+        print(str(i) + ": " + str(sorted_dict[i]))
