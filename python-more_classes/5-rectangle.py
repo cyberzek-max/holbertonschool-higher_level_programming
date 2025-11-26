@@ -70,4 +70,4 @@ class Rectangle:
     
     print("Bye rectangle...")
 
-    del self
+    del Rectangle
