@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Define a class Rectangle."""
 
-
 class Rectangle:
     """Represent a rectangle."""
 
@@ -68,6 +67,5 @@ class Rectangle:
         """Return the string representation of the Rectangle."""
         return "Rectangle({}, {})".format(self.width, self.height)
     
-
     def __del__(self):
         print("Bye rectangle...")
