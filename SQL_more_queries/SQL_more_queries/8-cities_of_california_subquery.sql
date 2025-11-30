@@ -1,5 +1,4 @@
--- 8-cities_of_california_subquery.sql: List all California cities without JOIN
-SELECT id, name
-FROM cities
-WHERE state_id = (SELECT id FROM states WHERE name='California')
+-- 8-cities_of_california_subquery.sql: List all cities in California without JOIN
+SELECT id, name FROM cities
+WHERE state_id = (SELECT id FROM states WHERE name = 'California')
 ORDER BY id ASC;

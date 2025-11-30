@@ -1,4 +1,5 @@
--- 7-cities.sql: Create table cities in hbtn_0d_usa
+-- 7-cities.sql: Create table cities with foreign key to states
+CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 USE hbtn_0d_usa;
 CREATE TABLE IF NOT EXISTS cities (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
