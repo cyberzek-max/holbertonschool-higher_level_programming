@@ -1,30 +1,28 @@
 #!/usr/bin/python3
 """
-Adds all arguments to a Python list and saves them to a JSON file
+Adds all arguments to a Python list and saves them to a JSON file.
 """
 
 import sys
-import importlib.util
+import json
 from pathlib import Path
 
 save_path = Path("add_item.json")
 
-# Dynamically import save_to_json_file
-spec = importlib.util.spec_from_file_location(
-    "save_to_json_file", "./save_to_json_file.py"
-)
-save_mod = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(save_mod)
+# Try to import helper functions, else define fallback
+try:
+    from save_to_json_file import save_to_json_file
+except ImportError:
+    def save_to_json_file(my_obj, filename):
+        with open(filename, "w") as f:
+            json.dump(my_obj, f)
 
-# Dynamically import load_from_json_file
-spec2 = importlib.util.spec_from_file_location(
-    "load_from_json_file", "./load_from_json_file.py"
-)
-load_mod = importlib.util.module_from_spec(spec2)
-spec2.loader.exec_module(load_mod)
-
-save_to_json_file = save_mod.save_to_json_file
-load_from_json_file = load_mod.load_from_json_file
+try:
+    from load_from_json_file import load_from_json_file
+except ImportError:
+    def load_from_json_file(filename):
+        with open(filename, "r") as f:
+            return json.load(f)
 
 # Load existing list if file exists, else start with empty list
 if save_path.exists():
