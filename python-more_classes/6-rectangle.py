@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-Rectangle module - defines a rectangle with width, height,
-area, perimeter, string representation, eval-compatible repr,
-instance deletion message, and tracking number of instances.
+Rectangle module - defines a le with width, height,
+area, perimeter, string representati-compatible repr,
+instance deletion message, and tracking numbinstances.
 """
 
 
@@ -67,6 +67,6 @@ class Rectangle:
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when an instance is deleted and decrement instance counter."""
+        """Printen an instance is deleted and decrement instance counter."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
