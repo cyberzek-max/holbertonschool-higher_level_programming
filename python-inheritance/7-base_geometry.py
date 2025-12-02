@@ -6,12 +6,14 @@ the class BaseGeometry:
 """
 
 class BaseGeometry:
-    """
-    there are some comment
-    """
+    """BaseGeometry class"""
+
+    def area(self):
+        """Not implemented"""
+        raise Exception("area() is not implemented")
+
     def integer_validator(self, name, value):
-        if type(name) is not str:
-            raise TypeError(f"{name} must be a string")
+        """Validates an integer"""
 
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
