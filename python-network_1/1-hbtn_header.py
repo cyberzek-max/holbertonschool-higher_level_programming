@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-import urllib.request
-import sys
 """
 This is the module documentation string.
 It explains what this script does.
 """
+import urllib.request
+import sys
 if __name__ == "__main__":
     """
     This script fetches a URL passed as an argument.
