@@ -3,7 +3,7 @@
 This is the module documentation string.
 It explains what this script does.
 """
-from requests import request
+from requests import *
 
 if __name__ == "__main__":
     """
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     """
     if __name__ == "__main__":
         url = "https://intranet.hbtn.io/status"
-        r = requests.get(url)
+        r = get(url)
         print("Body response:")
         print("\t- type: {}".format(type(r.text)))
         print("\t- content: {}".format(r.text))
