@@ -19,4 +19,5 @@ if __name__ == "__main__":
     req = urllib.request.Request(url, data=encoded_data, method='POST')
     with urllib.request.urlopen(req) as response:
         response_body = response.read()
-        print(response_body)
+        body_string = response_body.decode('UTF-8')
+        print(body_string)
