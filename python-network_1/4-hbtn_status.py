@@ -9,11 +9,9 @@ if __name__ == "__main__":
     """
     This script fetches a URL passed as an argument.
     """
+    if __name__ == "__main__":
     url = "https://intranet.hbtn.io/status"
-    bypass_header = {'cfclearance': 'true'}
-    with urllib.request.urlopen(url) as response:
-        body_bytes = response.read()
-        body_string = body_bytes.decode('UTF-8')
-        print("Body response:")
-        print("\t- type:", type(body_bytes))
-        print("\t- content:", body_bytes)
+    r = requests.get(url)
+    print("Body response:")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
