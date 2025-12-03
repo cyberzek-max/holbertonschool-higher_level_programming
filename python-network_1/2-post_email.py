@@ -14,7 +14,7 @@ if __name__ == "__main__":
     """
     This script fetches a URL passed as an argument.
     """
-    data = {"email" : email}
+    data = {"email": email}
     encoded_data = urllib.parse.urlencode(data).encode('utf-8')
     req = urllib.request.Request(url, data=encoded_data, method='POST')
     with urllib.request.urlopen(req) as response:
