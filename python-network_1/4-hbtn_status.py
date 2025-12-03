@@ -3,7 +3,7 @@
 This is the module documentation string.
 It explains what this script does.
 """
-import request
+from requests import request
 
 if __name__ == "__main__":
     """
