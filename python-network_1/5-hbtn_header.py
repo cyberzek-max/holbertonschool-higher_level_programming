@@ -11,7 +11,7 @@ if __name__ == "__main__":
     This script fetches a URL passed as an argument.
     """
     if __name__ == "__main__":
-        url = "https://intranet.hbtn.io/status"
+        url = argv[1]
         r = get(url)
         info = r.headers
         print(info.get("X-Request-Id"))
