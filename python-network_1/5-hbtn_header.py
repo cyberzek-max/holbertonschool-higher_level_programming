@@ -4,6 +4,7 @@ This is the module documentation string.
 It explains what this script does.
 """
 from requests import *
+from sys import *
 
 if __name__ == "__main__":
     """
