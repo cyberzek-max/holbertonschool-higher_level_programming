@@ -7,15 +7,12 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('index.html')
-
 @app.route('/about')
 def about():
     return render_template('about.html')
-
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
 @app.route('/items')
 def items():
     try:
@@ -43,10 +40,11 @@ def products():
         try:
             with open('products.csv', 'r') as f:
                 reader = csv.DictReader(f)
-                products_list = [row for row in reader]
-                for p in products_list:
-                    p['id'] = int(p['id'])
-                    p['price'] = float(p['price'])
+                products_list = []
+                for row in reader:
+                    row['id'] = int(row['id'])
+                    row['price'] = float(row['price'])
+                    products_list.append(row)
         except Exception as e:
             error_msg = str(e)
     else:
@@ -55,11 +53,9 @@ def products():
     if not error_msg and p_id:
         try:
             p_id = int(p_id)
-            filtered = [p for p in products_list if p['id'] == p_id]
-            if not filtered:
+            products_list = [p for p in products_list if p['id'] == p_id]
+            if not products_list:
                 error_msg = "Product not found"
-            else:
-                products_list = filtered
         except ValueError:
              error_msg = "Product not found"
 
